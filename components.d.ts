@@ -24,7 +24,11 @@ declare module '@vue/runtime-core' {
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     LanguageSetting: typeof import('./src/components/DetailPage/LanguageSetting.vue')['default']
     LeftMenu: typeof import('./src/components/left/LeftMenu.vue')['default']
+    LiveB: typeof import('./src/components/DetailPage/live/LiveB.vue')['default']
     LiveSetting: typeof import('./src/components/DetailPage/LiveSetting.vue')['default']
     MainPage: typeof import('./src/components/MainPage.vue')['default']
+    Navigator: typeof import('./src/components/DetailPage/navigator/Navigator.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
   }
 }

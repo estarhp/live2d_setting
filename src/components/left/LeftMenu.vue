@@ -19,25 +19,28 @@ const handleClose = (key: string, keyPath: string[]) => {
   <el-row class="tac">
     <el-col :span="24">
       <el-menu
-          default-active="2"
+          default-active="1"
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
       >
-        <el-menu-item index="2">
-          <router-link to="/">
+        <router-link to="/" style="height: 100%;width: 100%;">
+        <el-menu-item index="1">
+
           <el-icon><setting /></el-icon>
 
           <span>直播间设置</span>
-         </router-link>
-        </el-menu-item>
-        <el-menu-item index="4">
-          <router-link to="/language">
-          <el-icon><setting /></el-icon>
 
-            <span>语言模型设置</span>
-          </router-link>
         </el-menu-item>
+        </router-link>
+        <router-link to="/language" style="height: 100%;width: 100%">
+        <el-menu-item index="2">
+
+          <el-icon><setting /></el-icon>
+            <span>语言模型设置</span>
+
+        </el-menu-item>
+        </router-link>
       </el-menu>
     </el-col>
 
