@@ -4,6 +4,8 @@ import './style.css'
 import App from "./App.vue"
 // @ts-ignore
 import router from './router/index.js'
+
+// @ts-ignore
 import store from "./store/index.js"
 
 
