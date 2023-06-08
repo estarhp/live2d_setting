@@ -4,6 +4,11 @@ import './style.css'
 import App from "./App.vue"
 // @ts-ignore
 import router from './router/index.js'
+import store from "./store/index.js"
 
-createApp(App).use(router).mount('#app').$nextTick(() => postMessage({ payload: 'removeLoading' }, '*'))
+
+const app = createApp(App)
+app.use(store)
+app.use(router)
+app.mount('#app').$nextTick(() => postMessage({ payload: 'removeLoading' }, '*'))
 

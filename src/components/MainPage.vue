@@ -1,5 +1,6 @@
 <script setup >
 import LeftMenu from "./left/LeftMenu.vue";
+
 </script>
 
 <template>

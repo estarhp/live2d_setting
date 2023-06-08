@@ -11,10 +11,14 @@
     "make": "electron-forge make"
   },
   "dependencies": {
+    "@iarna/toml": "^2.2.5",
     "electron-squirrel-startup": "^1.0.0",
     "element-plus": "^2.3.5",
+    "toml": "^3.0.0",
     "vue": "^3.2.47",
-    "vue-router": "^4.2.2"
+    "vue-router": "^4.2.2",
+    "vuex": "^4.1.0",
+    "vux": "^2.11.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.1.1",

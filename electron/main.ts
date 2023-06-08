@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from 'electron'
+
 import path from 'node:path'
 
 // The built directory structure
@@ -22,6 +23,9 @@ function createWindow() {
   win = new BrowserWindow({
     icon: path.join(process.env.PUBLIC, 'electron-vite.svg'),
     webPreferences: {
+      contextIsolation: false,
+      nodeIntegration: true,
+
       preload: path.join(__dirname, 'preload.js'),
     },
   })
@@ -42,5 +46,15 @@ function createWindow() {
 app.on('window-all-closed', () => {
   win = null
 })
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
+
+
+
+
 
 app.whenReady().then(createWindow)

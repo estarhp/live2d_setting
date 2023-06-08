@@ -1,17 +1,11 @@
 <script setup lang="ts">
 
 import {
-  Document,
-  Menu as IconMenu,
-  Location,
   Setting,
 } from '@element-plus/icons-vue'
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
+import {useStore} from "vuex";
+
+const store = useStore()
 
 </script>
 
@@ -21,10 +15,8 @@ const handleClose = (key: string, keyPath: string[]) => {
       <el-menu
           default-active="1"
           class="el-menu-vertical-demo"
-          @open="handleOpen"
-          @close="handleClose"
       >
-        <router-link to="/" style="height: 100%;width: 100%;">
+        <router-link to="/live" style="height: 100%;width: 100%;">
         <el-menu-item index="1">
 
           <el-icon><setting /></el-icon>
@@ -42,11 +34,19 @@ const handleClose = (key: string, keyPath: string[]) => {
         </el-menu-item>
         </router-link>
       </el-menu>
+
+
     </el-col>
 
   </el-row>
+
+    <div class="button"><el-button type="primary" size="large" @click="store.commit('saveBFile')">保存</el-button></div>
+
 </template>
 
 <style scoped>
-
+.button {
+  position: relative;
+  top: 300px;
+}
 </style>
