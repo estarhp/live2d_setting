@@ -36,11 +36,11 @@ export function start (cmdstr) {
 export function Stop(){
     if (cmdProcess) {
 
-        exec('taskkill /F /PID '+cmdProcess.pid , { encoding: 'buffer' },(error, stdout, stderr) => {
-            // if (error) {
-            //     console.error(`exec error: ${error}`);
-            //     return;
-            // }
+        exec('taskkill /F /T /PID '+cmdProcess.pid , { encoding: 'buffer' },(error, stdout, stderr) => {
+            if (error) {
+                console.error(`exec error: ${error}`);
+                return;
+            }
 
             const stdoutStr = iconv.decode(stdout, 'gbk'); // 将输出从GBK编码转换为UTF-8编码
             const stderrStr = iconv.decode(stderr, 'gbk');
