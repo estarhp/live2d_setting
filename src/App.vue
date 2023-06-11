@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import HelloWorld from './components/MainPage.vue'
+import {onMounted} from "vue";
+import {useStore} from "vuex";
+const store = useStore()
+onMounted(async ()=>{
+  await store.dispatch("readBFile")
+  await store.dispatch("readProxyFile")
+})
 </script>
 
 <template>

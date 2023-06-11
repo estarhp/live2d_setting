@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {createRouter, createWebHashHistory, createWebHistory} from "vue-router";
 
 const routes = [
     {     path: "/live",
@@ -6,8 +6,16 @@ const routes = [
         children:[
             {
                 path:"bilibili",
-                component: import("../components/DetailPage/live/LiveB.vue")
-            }
+                component: import("../components/DetailPage/live/Bilibili.vue")
+            },
+            {
+                path:"overall",
+                component:import("../components/DetailPage/live/Overall.vue")
+            },
+            {
+                path:"youtube",
+                component:import("../components/DetailPage/live/Youtube.vue")
+            },
         ],
         redirect: "/live/bilibili"
 
@@ -16,9 +24,7 @@ const routes = [
     { path: "/language", component: () => import("../components/DetailPage/LanguageSetting.vue") },
     {
         path:"/",
-        redirect:"/live/bilibili"
-
-
+        redirect:"/live"
     }
 ];
 
@@ -26,6 +32,6 @@ const routes = [
 
 
 export default createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes
 });

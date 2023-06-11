@@ -40,7 +40,7 @@ const store = useStore()
 
   </el-row>
 
-    <div class="button"><el-button type="primary" size="large" @click="store.commit('saveBFile')">保存</el-button></div>
+    <div class="button"><el-button type="primary" size="large" @click="store.dispatch('saveFile')">保存</el-button></div>
 
 </template>
 

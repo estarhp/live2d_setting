@@ -1,13 +1,22 @@
 <script setup lang="ts">
-import { ref ,defineProps} from 'vue'
+import {ref, defineProps, onMounted} from 'vue'
 import {useRouter} from "vue-router";
 
-const activeIndex = ref('1')
-const activeIndex2 = ref('1')
+const activeIndex = ref("1")
+
 const router = useRouter()
 const handleSelect = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
+
 }
+onMounted(()=>{
+ if (location.hash==="#/live/overall"){
+   activeIndex.value = "0"
+ }
+
+  if (location.hash==="#/live/youtube"){
+    activeIndex.value = "2"
+  }
+})
 
 defineProps({
   list:{
@@ -18,7 +27,7 @@ defineProps({
 function handleClick(type){
   switch (type){
     case 0 : {
-      router.push("/live/allLive")
+      router.push("/live/overall")
       break
     }
     case 1 :{

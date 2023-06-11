@@ -5,9 +5,7 @@ import {useStore} from "vuex";
 const fs = require("fs")
 const store = useStore()
 
-onMounted(async ()=>{
-  await store.dispatch("readBFile")
-})
+
 
 const Bsetting = computed(()=>{
   return store.state.Bsetting
@@ -29,14 +27,7 @@ const Bsetting = computed(()=>{
             style="width: 30vw"
         />
       </div>
-      <div style="margin-bottom: 40px"></div>
-      <div>
-        <el-switch
-            v-model="Bsetting.select.bilibili"
-            class="ml-2"
-            style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
-        />
-      </div>
+
 
 
 

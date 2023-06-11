@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Bilibili: typeof import('./src/components/DetailPage/live/Bilibili.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']
@@ -28,7 +29,11 @@ declare module 'vue' {
     LiveSetting: typeof import('./src/components/DetailPage/LiveSetting.vue')['default']
     MainPage: typeof import('./src/components/MainPage.vue')['default']
     Navigator: typeof import('./src/components/DetailPage/navigator/Navigator.vue')['default']
+    Overall: typeof import('./src/components/DetailPage/live/Overall.vue')['default']
+    Proxy: typeof import('./src/components/DetailPage/live/overall/Proxy.vue')['default']
+    ProxySetting: typeof import('./src/components/DetailPage/live/overall/ProxySetting.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Youtube: typeof import('./src/components/DetailPage/live/Youtube.vue')['default']
   }
 }
