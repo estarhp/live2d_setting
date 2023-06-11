@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="js">
 import Navigator from "./navigator/Navigator.vue";
 
 let list = [

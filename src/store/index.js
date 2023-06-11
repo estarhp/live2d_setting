@@ -1,5 +1,9 @@
+// @ts-ignore
 import {createStore} from "vuex";
 import {readBFile, readProxyFile, saveBFile, saveProxyFile} from "@/readFile";
+import {start,Stop} from "@/rungo";
+
+const exec = require('shelljs/global');
 const state = {
     Bsetting:{
         bilibili: {
@@ -20,31 +24,41 @@ const state = {
 
 const mutations = {
 
-   Bsetting(state,data){
-       state.Bsetting = data
-   },
+    Bsetting(state,data){
+        state.Bsetting = data
+    },
     saveBFile(state){
-       saveBFile(state.Bsetting)
+        saveBFile(state.Bsetting)
     },
     ProxySetting(state,data) {
         state.ProxySetting = data
     },
     saveProxy(){
-       saveProxyFile(state.ProxySetting)
+        saveProxyFile(state.ProxySetting)
     }
 }
 
 const actions = {
-    saveFile(context){
-        context.commit("saveBFile")
-        context.commit("saveProxy")
+   async saveFile(context){
+       await context.commit("saveBFile")
+       await context.commit("saveProxy")
+
+
     },
-   async readBFile(context){
-       const setting= await readBFile()
-       context.commit("Bsetting",setting)
-   },
+    async saveRun(context,cmdStr){
+        await context.commit("saveBFile")
+        await context.commit("saveProxy")
+        start(cmdStr)
+    },
+    Stop(context){
+       Stop()
+    },
+    async readBFile(context){
+        const setting= await readBFile()
+        context.commit("Bsetting",setting)
+    },
     async readProxyFile(context){
-       const  setting = await readProxyFile()
+        const  setting = await readProxyFile()
         context.commit("ProxySetting",setting)
     }
 }

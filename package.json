@@ -4,20 +4,25 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build && electron-builder",
+    "build": " vue-tsc && vite build && electron-builder",
     "preview": "vite preview",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "build-win": "electron-builder build --win"
   },
   "dependencies": {
     "@iarna/toml": "^2.2.5",
     "electron-squirrel-startup": "^1.0.0",
     "element-plus": "^2.3.5",
+    "iconv-lite": "^0.6.3",
+    "pid-port": "^0.2.0",
+    "shelljs": "^0.8.5",
     "toml": "^3.0.0",
     "vue": "^3.2.47",
     "vue-router": "^4.2.2",
-    "vuex": "^4.1.0",
+    "vuex": "^4.0.2",
+    "vuex-electron": "^1.0.3",
     "vux": "^2.11.1"
   },
   "devDependencies": {
@@ -28,6 +33,7 @@
     "@electron-forge/maker-zip": "^6.1.1",
     "@vitejs/plugin-vue": "^4.1.0",
     "electron": "^24.4.0",
+    "electron-builder": "^23.6.0",
     "typescript": "^5.0.2",
     "unplugin-auto-import": "^0.16.4",
     "unplugin-vue-components": "^0.25.0",

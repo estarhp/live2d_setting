@@ -1,6 +1,7 @@
 <script setup lang="js">
+
 import {useStore} from "vuex";
-import {computed, ref} from "vue";
+import {computed} from "vue";
 import ProxySetting from "@/components/DetailPage/live/overall/ProxySetting.vue";
 
 const store = useStore()

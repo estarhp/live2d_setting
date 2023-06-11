@@ -1,6 +1,7 @@
-<script setup lang="ts">
+<script setup lang="js">
 import HelloWorld from './components/MainPage.vue'
 import {onMounted} from "vue";
+
 import {useStore} from "vuex";
 const store = useStore()
 onMounted(async ()=>{

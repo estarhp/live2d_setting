@@ -1,4 +1,4 @@
-<script setup >
+<script setup lang="js" >
 import LeftMenu from "./left/LeftMenu.vue";
 
 </script>

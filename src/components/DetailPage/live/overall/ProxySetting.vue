@@ -1,5 +1,6 @@
 <script setup lang="js">
 import {computed} from "vue";
+// @ts-ignore
 import {useStore} from "vuex";
 const store = useStore()
 

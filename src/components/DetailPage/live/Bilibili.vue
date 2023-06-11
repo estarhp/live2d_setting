@@ -1,6 +1,6 @@
-<script setup >
-import {computed, onMounted, ref} from "vue";
-import {readBFile, saveBFile} from "@/readFile";
+<script setup lang="js">
+import {computed} from "vue";
+
 import {useStore} from "vuex";
 const fs = require("fs")
 const store = useStore()
