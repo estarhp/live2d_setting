@@ -3,7 +3,6 @@ import {createStore} from "vuex";
 import {readBFile, readProxyFile, saveBFile, saveProxyFile} from "@/readFile";
 import {start,Stop} from "@/rungo";
 
-const exec = require('shelljs/global');
 const state = {
     Bsetting:{
         bilibili: {

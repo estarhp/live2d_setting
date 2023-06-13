@@ -55,6 +55,6 @@ const store = useStore()
 <style scoped>
 .button {
   position: relative;
-  top: 300px;
+  top: 250px;
 }
 </style>

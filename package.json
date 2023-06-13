@@ -1,5 +1,5 @@
 {
-  "name": "electron-vite-project",
+  "name": "GO!Tuber",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -13,17 +13,10 @@
   },
   "dependencies": {
     "@iarna/toml": "^2.2.5",
-    "electron-squirrel-startup": "^1.0.0",
     "element-plus": "^2.3.5",
     "iconv-lite": "^0.6.3",
-    "pid-port": "^0.2.0",
-    "shelljs": "^0.8.5",
-    "toml": "^3.0.0",
-    "vue": "^3.2.47",
     "vue-router": "^4.2.2",
-    "vuex": "^4.0.2",
-    "vuex-electron": "^1.0.3",
-    "vux": "^2.11.1"
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.1.1",
@@ -34,12 +27,14 @@
     "@vitejs/plugin-vue": "^4.1.0",
     "electron": "^24.4.0",
     "electron-builder": "^23.6.0",
+    "electron-squirrel-startup": "^1.0.0",
     "typescript": "^5.0.2",
     "unplugin-auto-import": "^0.16.4",
     "unplugin-vue-components": "^0.25.0",
     "vite": "^4.3.2",
     "vite-plugin-electron": "^0.11.2",
     "vite-plugin-electron-renderer": "^0.14.5",
+    "vue": "^3.3.4",
     "vue-tsc": "^1.4.2"
   },
   "main": "dist-electron/main.js"

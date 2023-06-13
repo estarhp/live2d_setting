@@ -25,6 +25,7 @@ declare module 'vue' {
     LiveSetting: typeof import('./src/components/DetailPage/LiveSetting.vue')['default']
     MainPage: typeof import('./src/components/MainPage.vue')['default']
     Navigator: typeof import('./src/components/DetailPage/navigator/Navigator.vue')['default']
+    OpenAI: typeof import('./src/components/DetailPage/live/overall/OpenAI.vue')['default']
     Overall: typeof import('./src/components/DetailPage/live/Overall.vue')['default']
     ProxySetting: typeof import('./src/components/DetailPage/live/overall/ProxySetting.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
