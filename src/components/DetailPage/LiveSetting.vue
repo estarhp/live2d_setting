@@ -1,11 +1,9 @@
 <script setup lang="js">
-
-import Navigator from "./navigator/Navigator.vue";
 import Bilibili from "@/components/DetailPage/live/Bilibili.vue";
 import Youtube from "@/components/DetailPage/live/Youtube.vue";
 import Overall from "@/components/DetailPage/live/Overall.vue";
-import {useRouter} from "vue-router";
-import {onMounted, ref} from "vue";
+
+import { ref} from "vue";
 
 
 let list = [
@@ -15,27 +13,7 @@ let list = [
 ]
 
 const activeIndex = ref("2")
-// @ts-ignore
-const router = useRouter()
 
-
-// @ts-ignore
-function handleClick(type){
-  switch (type){
-    case 0 : {
-      router.push("/live/overall")
-      break
-    }
-    case 1 :{
-      router.push("/live/bilibili")
-      break
-    }
-    case 2 :{
-      router.push("/live/youtube")
-      break
-    }
-  }
-}
 
 function handselect(a,b){
   activeIndex.value = a
