@@ -7,11 +7,14 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AzureOpenAI: typeof import('./src/components/DetailPage/Language/AzureOpenAI.vue')['default']
     Bilibili: typeof import('./src/components/DetailPage/live/Bilibili.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElForm: typeof import('element-plus/es')['ElForm']
+    ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
@@ -20,6 +23,8 @@ declare module 'vue' {
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElSwitch: typeof import('element-plus/es')['ElSwitch']
+    ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    General: typeof import('./src/components/DetailPage/Language/General.vue')['default']
     LanguageSetting: typeof import('./src/components/DetailPage/LanguageSetting.vue')['default']
     LeftMenu: typeof import('./src/components/left/LeftMenu.vue')['default']
     LiveSetting: typeof import('./src/components/DetailPage/LiveSetting.vue')['default']

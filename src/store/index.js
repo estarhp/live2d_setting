@@ -52,7 +52,7 @@ const mutations = {
         state.allData[4].content = TOML.stringify(state.allData[4].content)
         await writeFilesRecursive("./",state.allData)
         ElMessage({
-            message:"读取文件成功",
+            message:"写入文件成功",
             type:"success",
             duration:2000
         })
