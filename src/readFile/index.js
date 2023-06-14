@@ -28,18 +28,12 @@ export async function readDirRecursive(dir) {
 
 export async function writeFilesRecursive(baseDir, fileContents) {
     for (const fileContent of fileContents) {
-    if (fileContent === undefined) continue
 
-        if (Array.isArray(fileContent)) {
-            // 如果内容是一个数组，则递归调用 writeFilesRecursive 函数
-            await writeFilesRecursive(baseDir, fileContent);
-        } else {
-            // 否则，写入文件
             const  filePath = fileContent.filePath;
             const content = fileContent.content;
             const fullPath = path.join(baseDir, filePath);
             await fs.promises.writeFile(fullPath, content, { encoding: 'utf-8' });
-        }
+
     }
 }
 

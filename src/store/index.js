@@ -1,6 +1,7 @@
 import {createStore} from "vuex";
 import {start,Stop} from "@/rungo";
 import {readDirRecursive, writeFilesRecursive} from "@/readFile";
+import {DETOMLData, ENTOMLDate} from "@/utils";
 const TOML = require('@iarna/toml')
 
 const state = {
@@ -20,25 +21,58 @@ const state = {
         }
     },
     GptConfig:{
+
         "openai": {
-        "api_key": ""
-      },
+            "api_key": ""
+        },
         "azure": {
-        "end_point": "",
+            "end_point": "",
             "api_key": "",
             "deployment_id": "",
             "api_version": ""
-      },
+        },
         "general": {
-        "model": "",
+            "model": "",
             "temperature": "",
             "top_p": "",
             "max_tokens": "",
             "stop": "",
             "presence_penalty": "",
             "frequency_penalty": ""
-       }
+        }
 
+    },
+    NLP:{
+        NLP:{
+            "use_gpt": "",
+            "use_azure_gpt": "",
+            "use_other": ""
+        }
+    },
+    speech:{
+        speech:{
+            "use_xfyun": "",
+            "use_talkinggenie": "",
+            "use_azure": ""
+        }
+    },
+    AzureConfig:{
+        "azure": {
+            "key": "",
+            "end_point": ""
+        },
+        "speak": {
+            "version": "",
+            "xml_lang": "",
+            "xmlns_mstts": "",
+            "xmlns": ""
+        },
+        "voice": {
+            "name": "",
+            "effect": "",
+            "rate": "",
+            "volume": ""
+        }
     },
     allData:"",
     oldAllData:"",
@@ -47,9 +81,7 @@ const state = {
 
 const mutations = {
     async saveFile(state){
-        state.allData[0].content = TOML.stringify(state.allData[0].content)
-        state.allData[12].content = TOML.stringify(state.allData[12].content)
-        state.allData[4].content = TOML.stringify(state.allData[4].content)
+        DETOMLData(state)
         await writeFilesRecursive("./",state.allData)
         ElMessage({
             message:"写入文件成功",
@@ -67,14 +99,10 @@ const mutations = {
             duration:2000
         })
 
-        state.allData[0].content = TOML.parse(state.allData[0].content)
-        state.allData[12].content = TOML.parse(state.allData[12].content)
-        state.allData[4].content = TOML.parse(state.allData[4].content)
-        state.GptConfig =  state.allData[4].content
-        state.ProxySetting =  state.allData[12].content
-        state.Bsetting = state.allData[0].content
-        console.log( state.GptConfig)
+        ENTOMLDate(state)
+
         console.log(state.allData)
+        console.log(state.AzureConfig)
     },
 
 }
@@ -102,4 +130,6 @@ export default createStore({
     state,
     mutations
 })
+
+
 

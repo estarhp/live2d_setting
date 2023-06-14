@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="js">
 import {useStore} from "vuex";
 import {computed} from "vue";
 
@@ -7,9 +7,129 @@ const store = useStore()
 const general  = computed(()=>{
   return store.state.GptConfig.general
 })
+
+const NLP = computed(()=>{
+  return store.state.NLP.NLP
+})
+
+const speech = computed(()=>{
+  return store.state.speech.speech
+})
 </script>
 
 <template>
+  <el-row>
+    <el-col :span="8">
+      <el-text>
+        azure GPT
+      </el-text>
+      <el-switch
+          v-model="NLP.use_azure_gpt"
+          class="ml-2"
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+          v-if="!NLP.use_gpt && !NLP.use_other"
+      />
+      <el-switch
+          v-model="NLP.use_azure_gpt"
+          class="ml-2"
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+          disabled
+          v-else
+      />
+    </el-col>
+    <el-col :span="8">
+      <el-text>
+        GPT模型
+      </el-text>
+      <el-switch
+          v-model="NLP.use_gpt"
+          class="ml-2"
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+          v-if="!NLP.use_azure_gpt && !NLP.use_other"
+      />
+      <el-switch
+          v-model="NLP.use_gpt"
+          class="ml-2"
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+          disabled
+          v-else
+      />
+    </el-col>
+    <el-col :span="8">
+      <el-text>
+        其他模型
+      </el-text>
+      <el-switch
+          v-model="NLP.use_other"
+          class="ml-2"
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+          v-if="!NLP.use_azure_gpt && !NLP.use_gpt"
+      />
+      <el-switch
+          v-model="NLP.use_other"
+          class="ml-2"
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+          disabled
+          v-else
+      />
+    </el-col>
+  </el-row>
+  <el-row>
+    <el-col :span="8">
+      <el-text>
+        azure
+      </el-text>
+      <el-switch
+          v-model="speech.use_azure"
+          class="ml-2"
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+          v-if="!speech.use_talkinggenie && !speech.use_xfyun"
+      />
+      <el-switch
+          v-model="speech.use_azure"
+          class="ml-2"
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+          disabled
+          v-else
+      />
+    </el-col>
+    <el-col :span="8">
+      <el-text>
+        科大讯飞语音合成平台
+      </el-text>
+      <el-switch
+          v-model="speech.use_xfyun"
+          class="ml-2"
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+          v-if="!speech.use_talkinggenie && !speech.use_azure"
+      />
+      <el-switch
+          v-model="speech.use_xfyun"
+          class="ml-2"
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+          disabled
+          v-else
+      />
+    </el-col>
+    <el-col :span="8">
+      <el-text>
+        使用会话精灵(非官方api)
+      </el-text>
+      <el-switch
+          v-model="speech.use_talkinggenie"
+          class="ml-2"
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+          v-if="!speech.use_xfyun && !speech.use_azure"
+      />
+      <el-switch
+          v-model="speech.use_talkinggenie"
+          class="ml-2"
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+          disabled
+          v-else
+      />
+    </el-col>
+  </el-row>
   <div style="margin: 20px" />
   <el-form
       :label-position="'top'"

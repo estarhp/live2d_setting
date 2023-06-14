@@ -71,7 +71,6 @@ export function Stop(){
                 showClose:true
             })
 
-
             console.log(`stdout: ${stdoutStr}`);
             const stderrStr = iconv.decode(stderr, 'gbk');
             if (stderrStr){

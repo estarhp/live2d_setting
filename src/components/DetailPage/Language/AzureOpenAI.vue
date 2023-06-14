@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="js">
 import {useStore} from "vuex";
 import {computed} from "vue";
 
@@ -11,9 +11,8 @@ const azure = computed(()=>{
 <template>
 <el-form
     :label-position="'left'"
-    label-width="100px"
+    label-width="140px"
     :model="azure"
-    style="max-width: 500 px"
     :validate-event="false"
 >
 <el-form-item label="api_key">

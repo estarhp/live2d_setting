@@ -7,7 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AzureOpenAI: typeof import('./src/components/DetailPage/Language/AzureOpenAI.vue')['default']
+    AzureConfig: typeof import('./src/components/DetailPage/language/AzureConfig.vue')['default']
+    AzureOpenAI: typeof import('./src/components/DetailPage/language/AzureOpenAI.vue')['default']
     Bilibili: typeof import('./src/components/DetailPage/live/Bilibili.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
@@ -23,14 +24,14 @@ declare module 'vue' {
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElSwitch: typeof import('element-plus/es')['ElSwitch']
+    ElText: typeof import('element-plus/es')['ElText']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
-    General: typeof import('./src/components/DetailPage/Language/General.vue')['default']
+    General: typeof import('./src/components/DetailPage/language/General.vue')['default']
     LanguageSetting: typeof import('./src/components/DetailPage/LanguageSetting.vue')['default']
     LeftMenu: typeof import('./src/components/left/LeftMenu.vue')['default']
     LiveSetting: typeof import('./src/components/DetailPage/LiveSetting.vue')['default']
     MainPage: typeof import('./src/components/MainPage.vue')['default']
-    Navigator: typeof import('./src/components/DetailPage/navigator/Navigator.vue')['default']
-    OpenAI: typeof import('./src/components/DetailPage/live/overall/OpenAI.vue')['default']
+    OpenAI: typeof import('./src/components/DetailPage/language/OpenAI.vue')['default']
     Overall: typeof import('./src/components/DetailPage/live/Overall.vue')['default']
     ProxySetting: typeof import('./src/components/DetailPage/live/overall/ProxySetting.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

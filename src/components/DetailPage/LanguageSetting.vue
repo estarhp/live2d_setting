@@ -1,13 +1,15 @@
 <script setup lang="js">
 import {ref} from "vue";
-import OpenAI from "@/components/DetailPage/Language/OpenAI.vue";
-import AzureOpenAI from "@/components/DetailPage/Language/AzureOpenAI.vue";
-import General from "@/components/DetailPage/Language/General.vue";
+// import OpenAI from "@/components/DetailPage/Language/OpenAI.vue";
+// import AzureOpenAI from "@/components/DetailPage/Language/AzureOpenAI.vue";
+// import General from "@/components/DetailPage/Language/General.vue";
+// import AzureConfig from "@/components/DetailPage/language/AzureConfig.vue";
 
 let list = [
     "General",
     "openAI",
-    "azure openAI",
+    "Azure openAI",
+    "AzureConfig"
 ]
 
 
@@ -38,6 +40,7 @@ function handselect(a){
       <General v-if="activeIndex === '0'"></General>
       <OpenAI v-if="activeIndex === '1'"></OpenAI>
       <AzureOpenAI v-if="activeIndex === '2'"></AzureOpenAI>
+      <AzureConfig v-if="activeIndex === '3'"></AzureConfig>
 
     </el-main>
   </el-container>

@@ -12,7 +12,7 @@ let list = [
     "YouTube"
 ]
 
-const activeIndex = ref("2")
+const activeIndex = ref("0")
 
 
 function handselect(a,b){
