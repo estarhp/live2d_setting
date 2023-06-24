@@ -1,16 +1,13 @@
 <script setup lang="js">
 import HelloWorld from './components/MainPage.vue'
 import {onMounted, onUnmounted} from "vue";
-
 import {useStore} from "vuex";
 const store = useStore()
 onMounted(async ()=>{
-  await store.dispatch("readBFile")
-  await store.dispatch("readProxyFile")
-  ElMessage({
-    message:"文件加载成功",
-    type:"success"
-  })
+  // 读取文件夹中所有文件的内容
+  await store.dispatch("readFile")
+
+
 })
 
 onUnmounted(store.dispatch("Stop"))
